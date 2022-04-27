@@ -1,3 +1,9 @@
+@extends('admin.layouts.app')
+
+@section('title', 'Listagem dos posts')
+
+@section('content')
+
 @if (session('message'))
     <div>
         {{ session('message') }}
@@ -33,4 +39,4 @@
 @endif
 
 
-
+@endsection

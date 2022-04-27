@@ -4,7 +4,6 @@
             <li>{{$error}}</li>
         @endforeach
     </ul>
-
 @endif
 
 @csrf
