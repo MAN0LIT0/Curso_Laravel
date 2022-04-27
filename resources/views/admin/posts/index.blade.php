@@ -5,7 +5,10 @@
 @endif
 <form action="{{ route('posts.search') }}" method="post">
     @csrf
-    <input type="text" name="search" id="" placeholder="Filtrar">
+    @php
+      $dados = empty($filters) ? null : $filters['search']
+    @endphp
+    <input type="text" name="search" value="{{ old('search') ?? $dados }}" id="" placeholder="Filtrar">
     <button type="submit">Filtrar</button>
 
 </form>
@@ -22,6 +25,7 @@
 @endforeach
 
 <hr>
+
 @if (isset($filters))
     {{ $posts->appends($filters)->links() }}
 @else
