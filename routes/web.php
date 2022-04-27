@@ -23,6 +23,7 @@ Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.de
 Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
 Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::any('/posts/search', [PostController::class, 'search'])->name('posts.search');
 
 Route::get('/', function () {
     return view('welcome');
