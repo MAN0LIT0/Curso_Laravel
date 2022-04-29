@@ -5,7 +5,7 @@
 @section('content')
 <h1>Novo Post</h1>
 
-<form action="{{ route('posts.store') }}" method="POST">
+<form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
     @include('admin.posts._partials.form')
 </form>
